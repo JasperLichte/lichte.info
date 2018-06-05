@@ -1,0 +1,10 @@
+//SSH	
+	Hostname: de6.fcomet.com
+	username: lichtein
+	password: L*******01
+	port: 17177
+
+//FTP
+	Server: ftp.lichte.info
+	username: jasper@lichte.info
+	password: L*******01
