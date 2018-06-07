@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html {
+    font-size: 16px;
+    --main-color: mediumseagreen;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    color: #fff;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0.5rem;
+    position: relative;
+    transition: all 1s ease-out;
+    z-index: 98;
+}
+
+header > h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+header > .links {
+    position: absolute;
+    height: 35px;
+    bottom: 1rem;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+header > .links a {
+    width: 35px;
+}
+
+header .links img {
+    width: 100%;
+}
+
+.themeOptions {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    bottom: 0;
+    z-index: 99;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.themeOptions > div {
+    height: 25px;
+    width: 25px;
+    margin: 0.25rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25);
+}
+
+.themeOptions > div:first-of-type {
+    border: 2px solid #fff;
+}
+
+nav {
+    display: none;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    width: 400px;
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--main-color);
+    padding: 0.25rem;
+}
+
+nav h3 {
+    font-weight: 100;
+    font-size: 1.75rem;
+    border-bottom: 1px solid var(--main-color);
+    padding: 0 0.25rem;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+nav a, nav a:visited, nav a:active, nav a:link {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    text-decoration: none;
+    margin: 0.25rem 0 0.25rem 3rem;
+    border-bottom: 1px solid var(--main-color);
+    padding: 0.25rem;
+}
+
+nav #close {
+    height: 3rem;
+    width: 3rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+nav #close span {
+    display: inline-block;
+    height: 7%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--main-color);
+}
+
+nav #close span:first-of-type {
+    transform: translate(0px, 4.5px) rotate(45deg);
+}
+
+nav #close span:last-of-type {
+    transform: translate(0px, -10.5px) rotate(-45deg);
+}
+
+#hamburger_open {
+    height: 1.5rem;
+    width: 2.5rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+#hamburger_open span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+#hamburger_open span:nth-of-type(1) {
+
+}
+
+#hamburger_open span:nth-of-type(2) {
+    top: 50%;
+}
+
+#hamburger_open span:nth-of-type(3) {
+    top: 100%
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        width: 100%
+    }
+}
