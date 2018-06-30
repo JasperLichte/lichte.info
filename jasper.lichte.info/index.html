@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasper Lichte</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
 </head>
+
 <body>
     <header>
         <h1>Jasper Lichte</h1>
         <div class="links">
-            <a href="https://github.com/JasperLichte"><img src="./Assets/github-logo.svg" alt=""></a>
-            <a href="https://twitter.com/Jasper_Lichte"><img src="./Assets/twitter-logo-silhouette.svg" alt=""></a>
-            <a href="mailto:contact@jasper-lichte.com"><img src="./Assets/close-envelope.svg" alt=""></a>
+            <a href="https://github.com/JasperLichte">
+                <img src="./Assets/github-logo.svg" alt="">
+            </a>
+            <a href="https://twitter.com/Jasper_Lichte">
+                <img src="./Assets/twitter-logo-silhouette.svg" alt="">
+            </a>
+            <a href="mailto:contact@jasper-lichte.com">
+                <img src="./Assets/close-envelope.svg" alt="">
+            </a>
         </div>
-
-        <button id="hamburger_open">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav>
-            <button id="close">
-                <span></span>
-                <span></span>
-            </button>
-            <h3>Links</h3>
-            <a href="https://github.com/JasperLichte">GitHub</a>
-            <a href="https://twitter.com/Jasper_Lichte">Twitter</a>
-            <a href="mailto:contact@jasper-lichte.com">Mail</a>
-        </nav>
 
         <div class="themeOptions">
             <div data-color="MediumSeaGreen"></div>
@@ -40,7 +33,43 @@
             <div data-color="lightcoral"></div>
         </div>
     </header>
-    <script src="hamburger.js"></script>
+    <main id="fullpage">
+        <section class="section">
+            <div class="content">1</div>
+        </section>
+        <section class="section">
+            <div class="content">2</div>
+        </section>
+        <section class="section">
+            <div class="content">3</div>
+        </section>
+        <section class="section">
+            <div class="content">4</div>
+        </section>
+    </main>
+
+
+    <button id="hamburger_open">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav>
+        <button id="close">
+            <span></span>
+            <span></span>
+        </button>
+        <h3>Links</h3>
+        <a href="https://github.com/JasperLichte">GitHub</a>
+        <a href="https://twitter.com/Jasper_Lichte">Twitter</a>
+        <a href="mailto:contact@jasper-lichte.com">Mail</a>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="fullpage.min.js"></script>
+    <script src="./scroll.js"></script>
+    <script src="./hamburger.js"></script>
     <script src="./colors.js"></script>
 </body>
+
 </html>

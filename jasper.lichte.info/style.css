@@ -9,10 +9,11 @@ html {
     box-sizing: border-box;
 }
 
-body {
+body, main {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    background: var(--main-color);
 }
 
 header {
@@ -85,7 +86,7 @@ nav {
     height: 100vh;
     width: 400px;
     z-index: 99999;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100vw;
     color: var(--main-color);
@@ -144,16 +145,20 @@ nav #close span:last-of-type {
 }
 
 #hamburger_open {
-    height: 1.125rem;
-    width: 2rem;
+    height: 3.25rem;
+    width: 3.25rem;
     outline: none;
     border: none;
-    position: absolute;
-    top: 1rem;
-    left: 0.75rem;
+    position: fixed;
+    top: 1.75rem;
+    left: 2rem;
     padding: 0;
     background: transparent;
     cursor: pointer;
+    background: var(--main-color);
+    border-radius: 50%;
+    transition: all 1s ease-out;
+    z-index: 99;
 }
 
 #hamburger_open span {
@@ -161,23 +166,47 @@ nav #close span:last-of-type {
     position: absolute;
     top: 0;
     left: 0;
-    height: 9%;
-    width: 100%;
+    height: 0.125rem;
+    width: 1.5rem;
     margin: 0;
     padding: 0;
     background: #fff;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #hamburger_open span:nth-of-type(1) {
-
+    top: 30%;
 }
 
 #hamburger_open span:nth-of-type(2) {
-    top: 50%;
+    top: 48%;
 }
 
 #hamburger_open span:nth-of-type(3) {
-    top: 100%
+    top: 66%
+}
+
+#fullpage {
+    z-index: 99;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+#fullpage section {
+    background: var(--main-color);
+    padding: 1rem;
+    transition: background-color 1s ease-out;
+}
+
+#fullpage section .content {
+    background: #fff;
+    height: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+#fullpage section:nth-of-type(1) {
 }
 
 @media screen and (max-width: 500px) {
@@ -186,5 +215,20 @@ nav #close span:last-of-type {
     }
     header > h1 {
         font-weight: 100;
+    }
+
+    #fullpage section {
+        margin: 0.75rem;
+        width: calc(100% - 1.5rem);
+    }
+
+    #hamburger_open {
+        left: 1.5rem;
+    }
+
+    #fullpage section {
+        background: var(--main-color);
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 }
