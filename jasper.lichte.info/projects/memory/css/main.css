@@ -1,0 +1,74 @@
+main {
+}
+
+main .board {
+    background: var(--color-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+main .board .card {
+    height: 25vw;
+    width: 25vw;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 75px;
+    min-height: 75px;
+    background: var(--color-2);
+    margin: 0.5rem;
+    color: var(--color-3);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow-default);
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+main .board .card span:nth-of-type(1) {
+    font-family: var(--font-2);
+    font-size: 1.33em;
+}
+
+main .board .card span:nth-of-type(2) {
+    font-size: 0.75em;
+}
+
+main .board .card:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+main .board .card .imgNode {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+main .infoBar {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    max-width: 700px;
+    margin: 1rem auto 1rem;
+    font-size: 1.2rem;
+}
+
+main .infoBar .timer {
+    text-align: center;
+    flex-grow: 1;
+}
+
+main .infoBar * {
+    margin: 0;
+}

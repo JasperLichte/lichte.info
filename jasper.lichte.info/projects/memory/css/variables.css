@@ -1,0 +1,10 @@
+html {
+    --color-1 : sandybrown;
+    --color-2 : #333;
+    --color-3 : #eee;
+
+    --font-1 : 'Open Sans', sans-serif;
+    --font-2 : 'Indie Flower', cursive;
+
+    --box-shadow-default : 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
