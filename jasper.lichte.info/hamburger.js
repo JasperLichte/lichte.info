@@ -17,10 +17,14 @@ addEventListener('load', () => {
         } else {
             hamburger_nodes.nav.style.left = '-400px';
         }
+        setTimeout(() => {
+            hamburger_nodes.open.style.display = 'inline-block';
+        }, 700);
     });
     
     hamburger_nodes.open.addEventListener('click', e => {
         hamburger_nodes.nav.style.left = '0';
+        hamburger_nodes.open.style.display = 'none';
     });
     
     addEventListener('resize', e => {

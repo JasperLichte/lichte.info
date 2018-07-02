@@ -8,9 +8,6 @@ const server = app.listen(3001, () => {
     console.log('Listening on port 3001');
 });
 
-//Static Files
-app.use(express.static('public'));
-
 //Socket setup
 let connections = [];
 const io = socket(server);

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasper Lichte</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+    <script src="./hamburger.js"></script>
+    <script src="./colors.js"></script>
+    <script src="./bgAnimation.js"></script>
 </head>
 
 <body>
@@ -23,32 +25,42 @@
                 <img src="./Assets/close-envelope.svg" alt="">
             </a>
         </div>
-
         <div class="themeOptions">
-            <div data-color="MediumSeaGreen"></div>
-            <div data-color="tomato"></div>
             <div data-color="rgb(63, 63, 63)"></div>
+            <div data-color="tomato"></div>
+            <div data-color="seagreen"></div>
             <div data-color="SlateBlue"></div>
             <div data-color="darkorange"></div>
             <div data-color="lightcoral"></div>
         </div>
     </header>
-    <main id="fullpage">
-        <section class="section">
-            <div class="content">1</div>
+    <main>
+        <section class="section1">
+            <div class="content">
+                <h2>I am Jasper Lichte</h2>
+                <p>Programmer, Thinker, Designer and Student.</p>
+            </div>
+            <div class="img"></div>
         </section>
-        <section class="section">
-            <div class="content">2</div>
-        </section>
-        <section class="section">
-            <div class="content">3</div>
-        </section>
-        <section class="section">
-            <div class="content">4</div>
+        <section class="section2">
+            <div class="graphic">
+                <div class="data">
+                    <div id="html5"></div>
+                    <div id="css3"></div>
+                    <div id="es6"></div>
+                    <div id="php"></div>
+                    <div id="node"></div>
+                </div>
+                <div class="labels">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>PHP</span>
+                    <span>Node</span>
+                </div>
+            </div>
         </section>
     </main>
-
-
     <button id="hamburger_open">
         <span></span>
         <span></span>
@@ -64,12 +76,6 @@
         <a href="https://twitter.com/Jasper_Lichte">Twitter</a>
         <a href="mailto:contact@jasper-lichte.com">Mail</a>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="fullpage.min.js"></script>
-    <script src="./scroll.js"></script>
-    <script src="./hamburger.js"></script>
-    <script src="./colors.js"></script>
 </body>
 
 </html>
