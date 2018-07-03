@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html {
+  font-size: 16px;
+  --main-color: rgb(63, 63, 63);
+  --secondary-color: goldenrod;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  max-width: 100rem;
+  margin: 0 auto;
+  background: var(--main-color);
+  transition: background-color 1s ease-out;
+}

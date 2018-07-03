@@ -1,0 +1,117 @@
+nav {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    width: 400px;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    color: var(--secondary-color);
+    padding: 0.75rem;
+    padding-right: 1rem;
+    transition: left 0.75s ease-in-out;
+  }
+  
+  nav h3 {
+    font-weight: bolder;
+    font-size: 1.75rem;
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0 0.25rem;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    transition: color 1s ease-out;
+  }
+  
+  nav a,
+  nav a:visited,
+  nav a:active,
+  nav a:link {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0.25rem 0 0.25rem 3rem;
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0.25rem;
+    transition: color 1s ease-out;
+  }
+  
+  nav #close {
+    height: 2.5rem;
+    width: 2.5rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  nav #close span {
+    display: inline-block;
+    height: 5%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--secondary-color);
+    transition: background-color 1s ease-out;
+  }
+  
+  nav #close span:first-of-type {
+    transform: translate(0px, 4.5px) rotate(45deg);
+  }
+  
+  nav #close span:last-of-type {
+    transform: translate(0px, -10.5px) rotate(-45deg);
+  }
+  
+  #hamburger_open {
+    height: 3.5rem;
+    width: 3.5rem;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    background: var(--main-color);
+    border-radius: 50%;
+    transition: all 1s ease-out;
+    z-index: 99;
+    opacity: 0.8;
+  }
+  
+  #hamburger_open span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.15rem;
+    width: 1.75rem;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 1;
+  }
+  
+  #hamburger_open span:nth-of-type(1) {
+    top: 30%;
+  }
+  
+  #hamburger_open span:nth-of-type(2) {
+    top: 48%;
+  }
+  
+  #hamburger_open span:nth-of-type(3) {
+    top: 66%;
+  }
+  

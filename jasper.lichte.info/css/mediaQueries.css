@@ -1,0 +1,31 @@
+@media screen and (max-width: 500px) {
+    nav {
+      width: 100%;
+    }
+    header > h1 {
+      font-weight: 100;
+    }
+  
+    #hamburger_open {
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 1040px) {
+    main {
+      padding: 1rem;
+    }
+  
+    main .section1 .img {
+      display: none;
+    }
+  
+    nav {
+      background: rgba(255, 255, 255, 1);
+    }
+  
+    #hamburger_open span {
+      height: 0.125rem;
+    }
+  }

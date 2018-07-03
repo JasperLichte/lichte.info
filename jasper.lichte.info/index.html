@@ -5,10 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasper Lichte</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./hamburger.js"></script>
-    <script src="./colors.js"></script>
-    <script src="./bgAnimation.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/document.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/mediaQueries.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <!--JS-->
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/colors.js"></script>
+    <script src="./js/bgAnimation.js"></script>
+    <script src="./js/scrollAnimation.js"></script>
+    <script src="./js/sendEmail.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
 </head>
 
 <body>
@@ -29,7 +40,7 @@
             <div data-color="rgb(63, 63, 63)"></div>
             <div data-color="SlateBlue"></div>
             <div data-color="darkorange"></div>
-            <div data-color="seagreen"></div>
+            <div data-color="darkred"></div>
         </div>
     </header>
     <main>
@@ -56,6 +67,19 @@
                     <span>PHP</span>
                     <span>Node</span>
                 </div>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="inputs">
+                <p>Name (required)</p>
+                <input type="text" id="name">
+                <p>Email (required)</p>
+                <input type="email" id="email">
+                <p>Phone</p>
+                <input type="text" id="phone">
+                <p>Message (required)</p>
+                <textarea type="text" id="message" rows="1"onkeyup="adjustHeight(this)"></textarea>
+                <button id="send">Send Message</button><span id="status"></span>
             </div>
         </section>
     </main>
