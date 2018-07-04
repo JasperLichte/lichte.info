@@ -4,14 +4,16 @@ window.addEventListener("scroll", scrollAnimations);
 function scrollAnimations() {
   const headerNode = document.querySelector("header h1");
   const graphNode = document.querySelector("main .section2 .graphic > .data");
+  const contactNode = document.querySelector("main .section3 .inputs");
 
   animateHeader();
+  animateContactMe();
 
   if (
     window.scrollY >=
     getPosition(graphNode).y -
-      window.innerHeight +
-      graphNode.clientHeight * 0.75
+    window.innerHeight +
+    graphNode.clientHeight * 0.75
   ) {
     animateGraph();
   }
@@ -45,6 +47,15 @@ function scrollAnimations() {
             break;
         }
         el.style.height = val + "%";
+      }
+    });
+  }
+
+  function animateContactMe() {
+    const nodes = contactNode.querySelectorAll('input, textarea');
+    nodes.forEach(item => {
+      if (window.scrollY >= getPosition(item).y - window.innerHeight + item.clientHeight * 1) {
+        item.style.width = '100%';
       }
     });
   }

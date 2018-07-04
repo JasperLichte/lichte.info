@@ -37,7 +37,7 @@ class Particle {
 }
 
 if (!detectIE()) {
-  for (let i = 0; i < window.innerWidth / 50; i++) {
+  for (let i = 0; i < window.innerWidth / 175; i++) {
     let particle = new Particle();
     document.body.appendChild(particle.node);
   }

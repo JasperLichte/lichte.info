@@ -124,11 +124,11 @@ main .section3 .inputs input[type="text"], main .section3 .inputs input[type="em
   border: none;
   border-bottom: 1px solid var(--main-color);
   outline: none;
-  width: 100%;
+  width: 0%;
   padding: 0 5rem 0.25rem 0;
   font-size: 1.2em;
   color: #ccc;
-  transition: border 0.75s ease-out;
+  transition: border 0.75s ease-out, width 1s ease-in-out;
 }
 
 main .section3 .inputs input[type="text"]:focus,  main .section3 .inputs input[type="email"]:focus, textarea:focus {
@@ -156,6 +156,7 @@ main .section3 .inputs button[id="send"] {
   padding: 0.85rem 1.5rem;
   margin-top: 1em;
   transition: all 1s ease-out;
+  display: block;
 }
 
 main .section3 .inputs #status {
