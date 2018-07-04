@@ -1,12 +1,3 @@
-addEventListener("load", () => {
-
-  if (!detectIE()) {
-    for (let i = 0; i < window.innerWidth / 50; i++) {
-      let particle = new Particle();
-      document.body.appendChild(particle.node);
-    }
-  }
-});
 
 class Particle {
   constructor() {
@@ -44,6 +35,14 @@ class Particle {
     this.height = this.width;
   }
 }
+
+if (!detectIE()) {
+  for (let i = 0; i < window.innerWidth / 50; i++) {
+    let particle = new Particle();
+    document.body.appendChild(particle.node);
+  }
+}
+
 function detectIE() {
   let ua = window.navigator.userAgent;
 
