@@ -151,9 +151,9 @@ main .section3 .inputs button[id="send"] {
   background: var(--main-color);
   color: #ccc;
   border: 1px solid var(--secondary-color);
-  box-shadow: 0px 0px 0px 2px var(--main-color);
+  box-shadow: 0px 0px 0px 3px var(--main-color);
   outline: none;
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.5rem;
   margin-top: 1em;
   transition: all 1s ease-out;
 }
