@@ -14,7 +14,7 @@ addEventListener("load", () => {
     themes.push(item.dataset.color);
   }
 
-  //changeThemeAutomatically(themes);
+  changeThemeAutomatically(themes);
 });
 
 function themeChange(theme) {
