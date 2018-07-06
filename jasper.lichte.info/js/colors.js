@@ -27,8 +27,8 @@ function themeChange(theme) {
     case "darkorange":
       secondaryTheme = "rgb(63, 63, 63)";
       break;
-    case "darkred":
-      secondaryTheme = "DarkCyan";
+    case "#de3c4b":
+      secondaryTheme = "#17bebb";
       break;
     case "tomato":
       secondaryTheme = "DarkCyan";
@@ -36,8 +36,8 @@ function themeChange(theme) {
     case "rgb(63, 63, 63)":
       secondaryTheme = "goldenrod";
       break;
-    case "slateblue":
-      secondaryTheme = "hotpink";
+    case "#936a3f":
+      secondaryTheme = "#68a631";
       break;
     default:
       secondaryTheme = "goldenrod";

@@ -1,0 +1,16 @@
+footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h4 {
+    border-bottom: 1px solid #fff;
+    padding: 0.125rem 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+}
