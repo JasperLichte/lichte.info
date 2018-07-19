@@ -54,7 +54,7 @@ function scrollAnimations() {
   function animateContactMe() {
     const nodes = contactNode.querySelectorAll('input, textarea');
     nodes.forEach(item => {
-      if (window.scrollY >= getPosition(item).y - window.innerHeight + item.clientHeight * 1) {
+      if (window.scrollY >= getPosition(item).y - window.innerHeight + item.clientHeight) {
         item.style.width = '100%';
       }
     });
