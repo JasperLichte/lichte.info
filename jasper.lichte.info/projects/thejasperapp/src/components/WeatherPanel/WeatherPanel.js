@@ -1,29 +1,72 @@
 import React, { Component } from "react";
+import './WeatherPanel.css';
 
 class WeatherPanel extends Component {
   constructor() {
     super();
     this.state = {
-        weather : {
-          deg : 21
-        }
+      weather: {}
     };
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          let { latitude, longitude } = position.coords;
+          this.getWeather(latitude, longitude);
+        },
+        () => console.error("An Error accured getting your Geolocation..")
+      );
+    } else {
+      console.error("No access to Geolocation..");
+    }
   }
-  render() {
+
+  getWeather = (lat, lon) => {
+    const request = new XMLHttpRequest();
+    const options = {
+      units: "metric",
+      lang: "en",
+      appId: "32f1891e3db34ea30a0aca7ca8b6f212"
+    };
+    request.open(
+      "GET",
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${
+        options.units
+      }&lang=${options.lang}&APPID=${options.appId}`,
+      true
+    );
+    request.onload = () => {
+      const data = JSON.parse(request.responseText);
+      this.setState({
+        weather: data
+      });
+    };
+    request.send();
+  };
+
+  getWeatherNodes = () => {
+    let { main, name, weather } = this.state.weather;
+
     return (
-      <div className="WeatherPanel">
-        <p>{this.state.weather.deg}</p>
-        <button onClick={this.refreshWeather}>Refresh</button>
+      <div>
+        <p className="name">{name}</p>
+        <p className="temp">{main.temp_min + " - " + main.temp_max}</p>
+        <p className="description">{weather[0].description}</p>
+        <img
+          src={"http://openweathermap.org/img/w/" + weather[0].icon + ".png"}
+          alt={weather[0].description}
+        />
       </div>
     );
-  }
-  refreshWeather = () => {
-      this.setState({
-        weather : {
-          deg: this.state.weather.deg + 1
-        }
-      });
-  }
+  };
+
+  render = () => {
+    return (
+      <div className={this.state.weather.name ? "WeatherPanel active" : "WeatherPanel"}>
+        {this.state.weather.name ? this.getWeatherNodes() : null}
+      </div>
+    );
+  };
 }
 
 export default WeatherPanel;
