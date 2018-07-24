@@ -98,7 +98,9 @@ class NewsPanel extends Component {
           <button onClick={() => this.getNews("science")}>Wissenschaft</button>
           <button onClick={() => this.getNews("sports")}>Sport</button>
           <button onClick={() => this.getNews("health")}>Gesundheit</button>
-          <button onClick={() => this.getNews("entertainment")}>Entertainment</button>
+          <button onClick={() => this.getNews("entertainment")}>
+            Entertainment
+          </button>
           <button onClick={() => this.getNews("business")}>Business</button>
         </div>
         {this.state.news.status === "ok" ? this.getNewsNodes() : null}
