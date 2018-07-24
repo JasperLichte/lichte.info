@@ -5,12 +5,18 @@ class NewsPanel extends Component {
   constructor() {
     super();
     this.state = {
-      news: {}
+      news: {},
+      doneLoading : false
     };
     this.getNews("general");
   }
 
   getNews = category => {
+
+    this.setState({
+        doneLoading: false
+    });
+
     const options = {
       key: "d7a07be3c2ac4c9eae50384df7a167ac",
       country: "de",
@@ -36,7 +42,8 @@ class NewsPanel extends Component {
       })
       .then(data => {
         this.setState({
-          news: data
+          news: data,
+          doneLoading: true
         });
       });
   };
@@ -101,11 +108,10 @@ class NewsPanel extends Component {
           <button onClick={() => this.getNews("science")}>Wissenschaft</button>
           <button onClick={() => this.getNews("sports")}>Sport</button>
           <button onClick={() => this.getNews("health")}>Gesundheit</button>
-          <button onClick={() => this.getNews("entertainment")}>
-            Entertainment
-          </button>
+          <button onClick={() => this.getNews("entertainment")}>Entertainment</button>
           <button onClick={() => this.getNews("business")}>Business</button>
         </div>
+        {!this.state.doneLoading ? <div className="loading"></div> : null}
         {this.state.news.status === "ok" ? this.getNewsNodes() : null}
       </div>
     );
