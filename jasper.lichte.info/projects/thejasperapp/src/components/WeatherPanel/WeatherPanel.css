@@ -1,14 +1,14 @@
 .WeatherPanel {
     font-size: 1rem;
-    background: var(--secondary-color);
-    color: var(--main-color);
-    display: inline-flex;
+    color: var(--tertiary-color);
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     text-align: center;
-    position: relative;
+    background-size: 100%;
+    position: 50% 50%;
 }
 
 .WeatherPanel p {
@@ -16,7 +16,7 @@
 }
 
 .WeatherPanel .name {
-    font-size: 1.2em;
+    font-size: 1.25em;
     font-family: var(--secondary-font);
 }
 

@@ -11,7 +11,7 @@ class WeatherPanel extends Component {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
-          let { latitude, longitude } = position.coords;
+          const { latitude, longitude } = position.coords;
           this.getWeather(latitude, longitude);
         },
         () => console.error("An Error accured getting your Geolocation..")
@@ -25,7 +25,7 @@ class WeatherPanel extends Component {
     const request = new XMLHttpRequest();
     const options = {
       units: "metric",
-      lang: "en",
+      lang: "de",
       appId: "32f1891e3db34ea30a0aca7ca8b6f212"
     };
     request.open(
@@ -37,25 +37,24 @@ class WeatherPanel extends Component {
     );
     request.onload = () => {
       const data = JSON.parse(request.responseText);
-      this.setState({
-        weather: data
-      });
+      if (data.cod === 200) {
+        this.setState({
+          weather: data
+        });
+      }
     };
     request.send();
   };
 
   getWeatherNodes = () => {
-    let { main, name, weather } = this.state.weather;
+    const { main, name, weather } = this.state.weather;
 
     return (
       <div>
         <p className="name">{name}</p>
-        <p className="temp">{main.temp_min + " - " + main.temp_max}</p>
+        <p className="temp">{main.temp_min + "° - " + main.temp_max + "°"}</p>
         <p className="description">{weather[0].description}</p>
-        <img
-          src={"http://openweathermap.org/img/w/" + weather[0].icon + ".png"}
-          alt={weather[0].description}
-        />
+        <img src={'http://openweathermap.org/img/w/' + weather[0].icon + '.png'} alt="" />
       </div>
     );
   };

@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import WeatherPanel from './components/WeatherPanel/WeatherPanel';
+import React, { Component } from "react";
+import WeatherPanel from "./components/WeatherPanel/WeatherPanel";
+import NewsPanel from "./components/NewsPanel/NewsPanel";
 
 class App extends Component {
   render() {
     return (
-      <WeatherPanel></WeatherPanel>
+      <div>
+        <WeatherPanel />
+        <NewsPanel />
+      </div>
     );
   }
 }
