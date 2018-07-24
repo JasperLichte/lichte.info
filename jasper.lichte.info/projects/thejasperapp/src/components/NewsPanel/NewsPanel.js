@@ -14,6 +14,7 @@ class NewsPanel extends Component {
     const options = {
       key: "d7a07be3c2ac4c9eae50384df7a167ac",
       country: "de",
+      language : "de",
       category: category,
       pageSize: 20
     };
@@ -21,6 +22,8 @@ class NewsPanel extends Component {
     fetch(
       "https://newsapi.org/v2/top-headlines?country=" +
         options.country +
+        "&language=" +
+        options.language +
         "&category=" +
         options.category +
         "&pageSize=" +
@@ -74,7 +77,7 @@ class NewsPanel extends Component {
                         : publishedAt}
                   </p>
                   <p className="description">{description}</p>
-                  <a href={url}>Weiter lesen</a>
+                  <a href={url} target="_blank">Weiter lesen</a>
                 </div>
               </div>
             );
