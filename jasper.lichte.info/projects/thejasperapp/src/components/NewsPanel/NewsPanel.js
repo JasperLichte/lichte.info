@@ -85,7 +85,7 @@ class NewsPanel extends Component {
                 </p>
                 <p className="description">{description}</p>
                 <a href={url} target="_blank">
-                  Weiter lesen
+                  Weiterlesen
                 </a>
               </div>
             </div>
