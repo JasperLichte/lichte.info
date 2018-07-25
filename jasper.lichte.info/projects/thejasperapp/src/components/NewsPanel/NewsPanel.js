@@ -6,9 +6,10 @@ class NewsPanel extends Component {
     super();
     this.state = {
       news: {},
-      doneLoading: false
+      doneLoading: false,
+      category: "general"
     };
-    this.getNews("general");
+    this.getNews(this.state.category);
   }
 
   getNews = category => {
@@ -65,36 +66,42 @@ class NewsPanel extends Component {
           } = el;
           let a = publishedAt.substr(0, 10).split("-");
           publishedAt = a[2] + "." + a[1] + "." + a[0];
-          if (description) {
-            return (
-              <div
-                key={i}
-                className="article"
-                style={{
-                  backgroundImage: "url(" + urlToImage + ")"
-                }}
-              >
-                <div className="shadow">
-                  <h3>{title}</h3>
-                  <p className="author">
-                    {author
-                      ? author + ", " + publishedAt
-                      : source.name
-                        ? source.name + ", " + publishedAt
-                        : publishedAt}
-                  </p>
-                  <p className="description">{description}</p>
-                  <a href={url} target="_blank">
-                    Weiter lesen
-                  </a>
-                </div>
+          return (
+            <div
+              key={i}
+              className="article"
+              style={{
+                backgroundImage: "url(" + urlToImage + ")"
+              }}
+            >
+              <div className="shadow">
+                <h3>{title}</h3>
+                <p className="author">
+                  {author
+                    ? author + ", " + publishedAt
+                    : source.name
+                      ? source.name + ", " + publishedAt
+                      : publishedAt}
+                </p>
+                <p className="description">{description}</p>
+                <a href={url} target="_blank">
+                  Weiter lesen
+                </a>
               </div>
-            );
-          }
-          return null;
+            </div>
+          );
         })}
       </div>
     );
+  };
+
+  changeButtonStyleOnClick = el => {
+    document
+      .querySelectorAll(".NewsPanel.active .buttons button")
+      .forEach(item => {
+        item.setAttribute("class", "");
+      });
+    el.setAttribute("class", "active");
   };
 
   render() {
@@ -106,15 +113,64 @@ class NewsPanel extends Component {
         }
       >
         <div className="buttons">
-          <button onClick={() => currentCategory !== "general" && this.getNews("general")}>Allgemein</button>
-          <button onClick={() => currentCategory !== "technology" && this.getNews("technology")}>Technik</button>
-          <button onClick={() => currentCategory !== "science" && this.getNews("science")}>Wissenschaft</button>
-          <button onClick={() => currentCategory !== "sports" && this.getNews("sports")}>Sport</button>
-          <button onClick={() => currentCategory !== "health" && this.getNews("health")}>Gesundheit</button>
-          <button onClick={() => currentCategory !== "entertainment" && this.getNews("entertainment")}>
+          <button
+            className="active"
+            onClick={e => {
+              currentCategory !== "general" && this.getNews("general");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Allgemein
+          </button>
+          <button
+            onClick={e => {
+              currentCategory !== "technology" && this.getNews("technology");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Technik
+          </button>
+          <button
+            onClick={e => {
+              currentCategory !== "science" && this.getNews("science");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Wissenschaft
+          </button>
+          <button
+            onClick={e => {
+              currentCategory !== "sport" && this.getNews("sport");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Sport
+          </button>
+          <button
+            onClick={e => {
+              currentCategory !== "health" && this.getNews("health");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Gesundheit
+          </button>
+          <button
+            onClick={e => {
+              currentCategory !== "entertainment" &&
+                this.getNews("entertainment");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
             Entertainment
           </button>
-          <button onClick={() => currentCategory !== "business" && this.getNews("business")}>Business</button>
+          <button
+            onClick={e => {
+              currentCategory !== "business" && this.getNews("business");
+              this.changeButtonStyleOnClick(e.target);
+            }}
+          >
+            Business
+          </button>
         </div>
         {!this.state.doneLoading ? <div className="loading" /> : null}
         {this.state.doneLoading ? this.getNewsNodes() : null}

@@ -1,5 +1,5 @@
-.NewsPanel.active {
-    padding: 0.001rem 1rem;
+.NewsPanel {
+    padding: 0 1rem;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -7,7 +7,7 @@
 .NewsPanel.active .article {
   margin: 1rem 0;
   box-shadow: var(--shadow-1);
-  background-color: #446A7A;
+  background-color: #1b304dee;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -49,7 +49,7 @@
     background-color: rgba(0, 0, 0, 0.35);
 }
 
-.NewsPanel.active .buttons {
+.NewsPanel .buttons {
     display: flex;
     flex-wrap: wrap;
     width: calc(100% + 0.25rem);
@@ -58,7 +58,7 @@
     transform: translateX(-0.125rem);
 }
 
-.NewsPanel.active .buttons button {
+.NewsPanel .buttons button {
     padding: 0.5rem;
     flex-grow: 1;
     border: none;
@@ -71,7 +71,11 @@
     cursor: pointer;
 }
 
-.NewsPanel.active .loading {
+.NewsPanel .buttons button.active {
+    background: var(--secondary-color);
+}
+
+.NewsPanel .loading {
     height: 7rem;
     width: 7rem;
     margin: 4rem auto 1rem auto;
