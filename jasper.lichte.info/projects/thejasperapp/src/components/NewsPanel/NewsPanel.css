@@ -32,6 +32,10 @@
   text-align: right;
 }
 
+.NewsPanel.active .article .description {
+    text-align: justify;
+}
+
 .NewsPanel.active .article a,
 .NewsPanel.active .article a:active,
 .NewsPanel.active .article a:visited,
