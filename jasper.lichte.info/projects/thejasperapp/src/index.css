@@ -21,6 +21,7 @@ body {
     font-family: var(--main-font);
     color: var(--main-color);
     background: linear-gradient(to bottom right, var(--secondary-color), var(--main-color));
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
