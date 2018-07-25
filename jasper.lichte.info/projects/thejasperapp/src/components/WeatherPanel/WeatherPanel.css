@@ -13,6 +13,7 @@
 
 .WeatherPanel p {
     margin: 0.25em 0;
+    text-shadow: var(--shadow-1);
 }
 
 .WeatherPanel .name {
