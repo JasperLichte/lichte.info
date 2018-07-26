@@ -7,7 +7,7 @@ html {
     --main-color: #202B31;
     --secondary-color: orangered;
     --tertiary-color: #fff;
-
+  
     --main-font: 'Open Sans', sans-serif;
     --secondary-font: 'Merienda', cursive;
 
@@ -16,12 +16,11 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0;  
     padding: 0;
     font-family: var(--main-font);
     color: var(--main-color);
-    background: linear-gradient(to bottom right, var(--secondary-color), var(--main-color));
-    background-attachment: fixed;
+    background: var(--tertiary-color);
     min-height: 100vh;
 }
 
