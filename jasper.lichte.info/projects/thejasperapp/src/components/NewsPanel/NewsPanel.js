@@ -132,14 +132,6 @@ class NewsPanel extends Component {
           </button>
           <button
             onClick={e => {
-              currentCategory !== "science" && this.getNews("science");
-              this.changeButtonStyleOnClick(e.target);
-            }}
-          >
-            Wissenschaft
-          </button>
-          <button
-            onClick={e => {
               currentCategory !== "sport" && this.getNews("sport");
               this.changeButtonStyleOnClick(e.target);
             }}

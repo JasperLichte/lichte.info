@@ -16,7 +16,7 @@
 }
 
 .NewsPanel.active .article .shadow {
-  background: rgba(63, 63, 63, 0.85);
+  background: rgba(255, 102, 0, 0.75);
   padding: 0.5em;
   padding-bottom: 0.75em;
   box-shadow: var(--shadow-1);
@@ -69,21 +69,24 @@
     outline: none;
     margin: 0.125rem;
     box-shadow: var(--shadow-1);
-    background: var(--main-color);
+    background: var(--secondary-color);
     color: var(--tertiary-color);
     font-size: 1.05em;
     cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.5s ease-out;
 }
 
 .NewsPanel .buttons button.active {
     background: var(--secondary-color);
+    opacity: 1;
 }
 
 .NewsPanel .loading {
     height: 7rem;
     width: 7rem;
     margin: 4rem auto 1rem auto;
-    border: 0.4rem solid var(--main-color);
+    border: 0.4rem solid var(--secondary-color);
     border-radius: 50%;
     border-top-color: transparent;
     animation: loadingAnimation 1s ease-in-out 0s infinite;
@@ -97,7 +100,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .NewsPanel.active .buttons button {
         width: 100%;
     }
