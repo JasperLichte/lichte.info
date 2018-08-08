@@ -9,18 +9,17 @@
 }
 
 .App > * {
-    height: 50vh;
     width: 50vw;
     max-width: 600px;
     max-height: 400px;
 }
 
 .App .canvas {
-    background: var(--color-1);
-    box-shadow: var(--shadow);
+    height: 50vh;
+    background: var(--color-3);
     color: var(--color-2);
     padding: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -28,11 +27,38 @@
     font-size: 1.2em;
 }
 
-.App .inputs {
-    padding: 0 3rem;
+.App .propertyString {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
 }
 
-.App .inputs input[type="range"] {
-    width: 100%;
+.App .propertyString p {
+    text-align: center;
+}
+
+.App .inputs {
+    max-width: 500px;
+    border: 1px solid var(--color-1);
+    padding: 1rem;
+}
+
+.App .inputs div {
+    margin: 0.25rem 0;
+    padding: 0.25rem;
+}
+
+.App .inputs div span {
+    margin-right: 1rem;
+}
+
+.App .inputs div input {
     margin: 0;
+    max-width: 200px;
+    width: 60%;
+    float: right;
+}
+
+.App .inputs div input[type="checkbox"] {
+    width: auto;
+    transform: translate(calc(-75px - 100%), 0)
 }
