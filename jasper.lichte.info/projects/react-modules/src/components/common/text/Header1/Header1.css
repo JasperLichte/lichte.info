@@ -1,0 +1,7 @@
+.Header1 {
+    margin: 0;
+    background-color: var(--bg-color-2);
+    padding: 0.5rem 1rem 0.25rem 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: var(--shadow-1);
+}

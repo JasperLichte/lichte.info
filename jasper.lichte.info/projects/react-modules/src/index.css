@@ -1,0 +1,22 @@
+html {
+  font-size: 16px;
+
+  --accent-color: darkorange;
+  --font-color: #222;
+  --bg-color-1: #fff;
+  --bg-color-2: #ddd;
+  --shadow-1: 0px 0px 5px rgba(255, 255, 255, 0.25);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: var(--font-color);
+  background-color: var(--bg-color-1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  outline: 0 none;
+}
