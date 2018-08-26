@@ -1,0 +1,32 @@
+.ToggleSwitch {
+    margin: 2rem;
+    background-color: var(--inactive-color);
+    height: 1.4rem;
+    width: 4rem;
+    border-radius: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    box-shadow: inset var(--shadow-1), var(--shadow-1);
+}
+
+.ToggleSwitch > .slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
+    height: 70%;
+    width: 2rem;
+    border-radius: 1rem;
+    background-color: var(--bg-color-1);
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-1);
+}
+
+.ToggleSwitch.active > .slider{
+    left: calc(100% - (2rem + 4px));
+}
+
+.ToggleSwitch.active {
+    background-color: var(--active-color);
+}

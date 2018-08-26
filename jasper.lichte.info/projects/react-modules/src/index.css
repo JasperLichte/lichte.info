@@ -5,7 +5,9 @@ html {
   --font-color: #222;
   --bg-color-1: #fff;
   --bg-color-2: #ddd;
-  --shadow-1: 0px 0px 5px rgba(255, 255, 255, 0.25);
+  --active-color: seagreen;
+  --inactive-color: tomato;
+  --shadow-1: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
 body {

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header2 from './components/common/text/Header2/Header2';
+import ToggleSwitch from './components/common/inputs/ToggleSwitch/ToggleSwitch';
+import TextInput from './components/common/inputs/TextInput/TextInput';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header2></Header2>
+        <ToggleSwitch name="Switch" active="true" />
+        <TextInput placeholder="huhuhu" />
       </div>
     );
   }
