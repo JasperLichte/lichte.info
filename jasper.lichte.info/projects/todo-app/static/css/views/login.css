@@ -1,0 +1,97 @@
+body {
+    background-color: var(--font-clr);
+    background-image: url(./../../assets/login/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    margin-top: -20vh;
+    background-color: var(--quarter-transparent-font-clr);
+    color: var(--bg-clr);
+    display: inline-block;
+    padding: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-radius: var(--border-radius);
+    width: 300px;
+    box-shadow: var(--box-shadow);
+}
+
+.login h2 {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.login a {
+    color: currentColor;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login .login-with {    
+    margin-bottom: 1.5rem;
+}
+
+.login .login-with .btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 5px 10px 5px 50px;
+    color: rgba(220, 220, 220, 0.8);
+    font-size: 0.9rem;
+    text-shadow: inset var(--box-shadow);
+    box-shadow: var(--box-shadow);
+}
+
+.login .login-with .btn:last-of-type {
+    margin-bottom: 0;
+}
+
+.login .login-with .btn:hover {
+    transform: scale(1.02);
+    text-decoration: none;
+}
+
+.login .login-with .btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 40px;
+    left: 0;
+    top: 0;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.login .login-with .btn.google {
+    background: var(--google-red);
+}
+.login .login-with .btn.google::before {
+    background-image: url(./../../assets/login/google-plus-logo.svg);
+}
+
+.login .login-with .btn.facebook {
+    background: var(--facebook-blue);
+}
+.login .login-with .btn.facebook::before {
+    background-image: url(./../../assets/login/facebook-logo.svg);
+}
+
+.login .login-with .btn.github {
+    background: var(--github-gray);
+}
+.login .login-with .btn.github::before {
+    background-image: url(./../../assets/login/github-logo.svg);
+}

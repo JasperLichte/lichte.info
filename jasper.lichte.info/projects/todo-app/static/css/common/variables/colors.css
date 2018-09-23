@@ -1,0 +1,9 @@
+html {
+    --font-clr: #222;
+    --bg-clr: #eee;
+    --quarter-transparent-font-clr: rgba(34, 34, 34, 0.75);
+
+    --google-red: rgb(207, 67, 50);
+    --facebook-blue: rgb(65, 94, 174);
+    --github-gray: rgb(70, 70, 70);
+}

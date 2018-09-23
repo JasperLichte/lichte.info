@@ -1,0 +1,7 @@
+INSERT INTO strings
+    (string_ID, language , string)
+VALUES
+    ('LOGIN_WITH', 'de', 'Anmelden mit'),
+    ('LOGIN_WITH', 'en', 'Sign in with'),
+    ('LOGIN_WITH', 'es', 'Inicia sesión con'),
+    ('LOGIN_WITH', 'fr', 'Se connecter avec');
