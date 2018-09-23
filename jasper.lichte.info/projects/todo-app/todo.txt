@@ -1,0 +1,7 @@
+// TODO-items:
+[x] Routes to different file
+[x] Change architecture to create db conn only once
+[ ] getTableFields method in QueryHelper
+[ ] Figure out how to acces the app with a specific path/without port number
+[x] Auth routes
+[ ] design 404 page

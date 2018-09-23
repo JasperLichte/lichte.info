@@ -1,4 +1,4 @@
-const { defaults } = require('./../config/env');
+const { defaults } = require("./../config/env");
 
 class QueryHelper {
   /**
@@ -8,23 +8,30 @@ class QueryHelper {
    * @param {string} language
    * @returns {string}
    */
-  static getString(connection = null, stringId = "", language = defaults.language) {
+  static getString(
+    connection = null,
+    stringId = "",
+    language = defaults.language
+  ) {
     if (!connection || !stringId) {
       return "";
     }
 
-    connection.query( `
+    connection.query(
+      `
         SELECT string_ID, string
         FROM strings
         WHERE string_ID = ${QueryHelper.quotateString(connection, stringId)}
          AND language = '${language}'
         LIMIT 1
-        `, (err, res) => {
-            if (err || !res || !res.length) {
-                return;
-            }
-            return res[0].string;
-        });
+        `,
+      (err, res) => {
+        if (err || !res || !res.length) {
+          return;
+        }
+        return res[0].string;
+      }
+    );
   }
 
   /**
@@ -34,30 +41,32 @@ class QueryHelper {
    * @param {string} language
    * @returns {object}
    */
-  static getStrings(connection = null, stringIds = [], language = defaults.language) {
-    if (!connection || !stringIds || !stringIds.length) {
-      return {};
-    }
-
+  static getStrings(
+    connection = null,
+    stringIds = [],
+    language = defaults.language
+  ) {
     return new Promise((resolve, reject) => {
-        let strings = {};
-        connection.query(`
-            SELECT string_ID, string
-            FROM strings
-            WHERE string_ID IN (${QueryHelper.quotateString(
-              connection,
-              stringIds
-            )})
-             AND language = '${language}'
-            `, (err, res) => {
-            if (err || !res || !res.length) {
-                reject();
-            }
-            res.forEach(set => {
-                strings[set.string_ID] = set.string;
-            });
-            resolve(strings);
-        });
+      if (!connection || !stringIds || !stringIds.length) {
+        resolve({});
+        return;
+      }
+      let strings = {};
+      connection.query(`
+        SELECT string_ID, string
+        FROM strings
+        WHERE string_ID IN (${QueryHelper.quotateString(connection, stringIds)})
+         AND language = '${language}'
+        `, (err, res) => {
+          if (err || !res || !res.length) {
+            reject();
+          }
+          res.forEach(set => {
+            strings[set.string_ID] = set.string;
+          });
+          resolve(strings);
+        }
+      );
     });
   }
 

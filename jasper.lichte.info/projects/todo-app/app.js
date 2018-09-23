@@ -1,44 +1,30 @@
+const Connection = require('./db/Connection');
 const { host, defaults } = require('./config/env');
 const express = require('express');
-const ejs = require('ejs');
-const locale = require("locale");
-const Connection = require('./db/Connection');
-const QueryHelper = require('./db/QueryHelper');
-
-const supportedLangauges = new locale.Locales(['en', 'de', 'es', 'fr'])
-let activeLanguage = defaults.language;
-
 const app = express();
-app.set('view engine', 'ejs');
-app.use(express.static('static'));
-app.use(locale(supportedLangauges, defaults.language));
 
-const connection = new Connection();
+let connection = null;
 
-// Index
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Start',
-        lang: activeLanguage
+// Connect to db, export connection and setup the app
+(new Connection()).then(conn => {
+    module.exports = conn;
+    connection = conn;
+    appSetup();
+});
+
+/**
+ * @requires './Routes/routes'
+ * @returns {void}
+ */
+function appSetup() {
+    // Path to static
+    app.use(express.static('static'));
+    // Routes
+    app.use('/', require('./Routes/routes'));
+    // View engine
+    app.set('view engine', 'ejs');
+    
+    app.listen(host.PORT, (req, res) => {
+        console.log(`Listening on ${host.HOST}:${host.PORT}`);
     });
-});
-
-// Login
-app.get('/login', (req, res) => {
-    if (req.locale) {
-        activeLanguage = req.locale;
-    }
-    QueryHelper.getStrings(connection.getConnection(), ['LOGIN', 'LOGIN_WITH', 'HELLO'], activeLanguage)
-        .then(dbStrings => {
-            res.render('login', {
-                title: dbStrings['LOGIN'],
-                lang: activeLanguage,
-                dbStrings: dbStrings
-            });
-
-        });
-});
-
-app.listen(host.PORT, (req, res) => {
-    console.log(`Listening on ${host.HOST}:${host.PORT}`);
-});
+}

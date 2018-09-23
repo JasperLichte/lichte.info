@@ -10,23 +10,22 @@ class Connection {
     this.dbPassword = db.PASSWORD;
     this.connection = null;
 
-    this.connect();
-  }
-
-  connect() {
-    this.connection = mysql.createConnection({
-      host: this.host,
-      user: this.dbUser,
-      password: this.dbPassword,
-      database: this.dbName
-    });
-
-    this.connection.connect(error => {
-      if (error) {
-        console.error('Error accured connecting to db');
-        return;
-      }
-      console.log('Connected to db');
+    return new Promise((resolve, reject) => {
+      this.connection = mysql.createConnection({
+        host: this.host,
+        user: this.dbUser,
+        password: this.dbPassword,
+        database: this.dbName
+      });
+  
+      this.connection.connect(error => {
+        if (error) {
+          console.error('Error accured connecting to ' + this.host);
+          return;
+        }
+        console.log('Connected to ' + this.host);
+        resolve(this);
+      });
     });
   }
 

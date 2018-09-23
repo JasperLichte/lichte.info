@@ -1,7 +1,7 @@
 INSERT INTO strings
     (string_ID, language , string)
 VALUES
-    ('LOGIN_WITH', 'de', 'Anmelden mit'),
-    ('LOGIN_WITH', 'en', 'Sign in with'),
-    ('LOGIN_WITH', 'es', 'Inicia sesión con'),
-    ('LOGIN_WITH', 'fr', 'Se connecter avec');
+    ('YOU_CAN_LOGIN_WITH', 'de', 'Du kannst dich mit einer der unten aufgeführten Plattformen einloggen'),
+    ('YOU_CAN_LOGIN_WITH', 'en', 'You can log in using one of the platforms listed below'),
+    ('YOU_CAN_LOGIN_WITH', 'es', 'Puede iniciar sesión utilizando una de las plataformas enumeradas a continuación'),
+    ('YOU_CAN_LOGIN_WITH', 'fr', 'Vous pouvez vous connecter en utilisant l'une des plates-formes répertoriées ci-dessous');

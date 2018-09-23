@@ -10,6 +10,7 @@ module.exports = {
         PASSWORD: 'Lichtlein01'
     },
     defaults: {
-        language: 'en'
+        language: 'es',
+        supportedLanguages: ['en', 'de', 'es', 'fr']
     }
 }

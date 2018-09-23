@@ -4,15 +4,16 @@
 </head>
 <body>
     <div class="login">
-        <form action="">
-            <h2><%= dbStrings['HELLO'] %></h2>
-            <div class="login-with">
-                <a href='#' class="btn google"><%= dbStrings['LOGIN_WITH'] %> Google</a>
-                <a href='#' class="btn facebook"><%= dbStrings['LOGIN_WITH'] %> Facebook</a>
-                <a href='#' class="btn github"><%= dbStrings['LOGIN_WITH'] %> GitHub</a>
-            </div>
-        </form>
-        <a href="#" class="about-link">About</a>
+        <h2><%= dbStrings['HELLO'] %></h2>
+        <% if (dbStrings['YOU_CAN_LOGIN_WITH']) { %>
+            <p class="login-text"><%= dbStrings['YOU_CAN_LOGIN_WITH'] %></p>
+        <% } %>
+        <div class="login-with">
+            <a href='/auth/google' class="btn google"><%= dbStrings['LOGIN_WITH'] %> Google</a>
+            <a href='/auth/facebook' class="btn facebook"><%= dbStrings['LOGIN_WITH'] %> Facebook</a>
+            <a href='/auth/github' class="btn github"><%= dbStrings['LOGIN_WITH'] %> GitHub</a>
+        </div>
+        <a href="/about" class="about-link">About</a>
     </div>
 </body>
 </html>
