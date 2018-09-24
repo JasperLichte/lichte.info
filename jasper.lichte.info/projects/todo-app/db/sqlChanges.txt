@@ -1,7 +1,7 @@
-INSERT INTO strings
-    (string_ID, language , string)
+REPLACE INTO `strings` (`string_ID` ,`language` ,`string`)
 VALUES
-    ('YOU_CAN_LOGIN_WITH', 'de', 'Du kannst dich mit einer der unten aufgeführten Plattformen einloggen'),
-    ('YOU_CAN_LOGIN_WITH', 'en', 'You can log in using one of the platforms listed below'),
-    ('YOU_CAN_LOGIN_WITH', 'es', 'Puede iniciar sesión utilizando una de las plataformas enumeradas a continuación'),
-    ('YOU_CAN_LOGIN_WITH', 'fr', 'Vous pouvez vous connecter en utilisant l'une des plates-formes répertoriées ci-dessous');
+('PLEASE_USE_AUTOCOMPLETE', 'de', 'Your text here'),
+('PLEASE_USE_AUTOCOMPLETE', 'en', 'Your text here'),
+('PLEASE_USE_AUTOCOMPLETE', 'fr', 'Your text here'),
+('PLEASE_USE_AUTOCOMPLETE', 'es', 'Your text here'),
+

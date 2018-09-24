@@ -7,5 +7,9 @@
 [ ] Figure out how to acces the app with a specific path/without port number
 [x] Auth routes
 [ ] Design 404 page
+<<<<<<< HEAD
 [ ] Design About page
 [x] Rename routes directory
+=======
+[ ] Add WEB_PATH constant
+>>>>>>> 828783a2c81061e2bcb139d9365489fd03cde511
