@@ -1,11 +1,17 @@
+const passport = require('passport');
+
 module.exports = {
 
     /**
      * Login with Google
      * /auth/google
      */
-    getGoogle: (req, res) => {
-        res.send('in progress');
+    getGoogle: passport.authenticate('google', {
+        scope: ['profile']
+    }),
+
+    getGoogleRedirect: (req, res) => {
+        res.send('hu')
     },
 
     /**

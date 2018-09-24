@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-
 const { db } = require('./../config/env');
 const credentials = require('./../config/credentials');
 
@@ -22,6 +21,7 @@ class Connection {
       this.connection.connect(error => {
         if (error) {
           console.error('Error accured connecting to ' + this.host);
+          resolve({});
           return;
         }
         console.log('Connected to ' + this.host);

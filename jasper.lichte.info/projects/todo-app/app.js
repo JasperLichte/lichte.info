@@ -3,13 +3,12 @@ const { host, defaults } = require('./config/env');
 const express = require('express');
 const app = express();
 
-let connection = null;
-
 // Connect to db, export connection and setup the app
-(new Connection()).then(conn => {
-    module.exports = conn;
-    connection = conn;
+(new Connection()).then(connection => {
+    module.exports = connection;
     appSetup();
+}).catch(error => {
+    console.error(error);
 });
 
 /**
