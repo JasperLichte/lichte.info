@@ -1,7 +1,11 @@
 // TODO-items:
-[x] Routes to different file
+[x] Move routes to different file
 [x] Change architecture to create db conn only once
-[ ] getTableFields method in QueryHelper
+[x] Extract Keys/Tokens to external file
+[x] getTableFieldsElements method in QueryHelper
+[x] Change activeLanguage to user's locale language when possible/supported
 [ ] Figure out how to acces the app with a specific path/without port number
 [x] Auth routes
-[ ] design 404 page
+[ ] Design 404 page
+[ ] Design About page
+[x] Rename routes directory

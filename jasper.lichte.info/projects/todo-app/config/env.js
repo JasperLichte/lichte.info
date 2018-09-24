@@ -5,9 +5,7 @@ module.exports = {
     },
     db: {
         HOST: '139.162.132.71',
-        DB: 'lichtein_app',
-        USER: 'lichtein_admin',
-        PASSWORD: 'Lichtlein01'
+        DB: 'lichtein_app'
     },
     defaults: {
         language: 'es',

@@ -1,13 +1,14 @@
 const mysql = require("mysql");
 
 const { db } = require('./../config/env');
+const credentials = require('./../config/credentials');
 
 class Connection {
   constructor() {
     this.host = db.HOST;
     this.dbName = db.DB;
-    this.dbUser = db.USER;
-    this.dbPassword = db.PASSWORD;
+    this.dbUser = credentials.db.USER;
+    this.dbPassword = credentials.db.PASSWORD;
     this.connection = null;
 
     return new Promise((resolve, reject) => {

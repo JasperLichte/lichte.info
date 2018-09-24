@@ -13,14 +13,14 @@ let connection = null;
 });
 
 /**
- * @requires './Routes/routes'
+ * @requires './routes/routes'
  * @returns {void}
  */
 function appSetup() {
     // Path to static
     app.use(express.static('static'));
-    // Routes
-    app.use('/', require('./Routes/routes'));
+    // routes
+    app.use('/', require('./routes/routes'));
     // View engine
     app.set('view engine', 'ejs');
     
