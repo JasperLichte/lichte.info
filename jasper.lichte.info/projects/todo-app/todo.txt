@@ -4,4 +4,5 @@
 [ ] getTableFields method in QueryHelper
 [ ] Figure out how to acces the app with a specific path/without port number
 [x] Auth routes
-[ ] design 404 page
+[ ] Design 404 page
+[ ] Add WEB_PATH constant
