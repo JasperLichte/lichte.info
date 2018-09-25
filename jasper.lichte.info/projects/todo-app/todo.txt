@@ -1,27 +1,13 @@
 # Architecture
 [ ] Add WEB_PATH constant
-[ ] - Create class Appinformation
-    [ ] getApplicationName():string
 [ ] - Create class User
     [ ] userExists():boolean
     [ ] storeUser:void
 
 # Routes
-[x] - Routes
-    [x] Rename routes directory
-    [x] Move routes to different file
-    [x] Extract Keys/Tokens to external file
-    [x] Change activeLanguage to user's locale language when possible/supported
 
 # Auth
-[x] setup auth routes
-[ ] make passport be required only once
-[ ] - Google
-    [x] Get App-Tokens from Google
-    [x] Redirect User to Google
-    [x] Recieve Token from Google
-    [x] Use Token to get Userdata
-    [ ] If User not yet stored, create new User in db
+[ ] - Facebook          
 
 # Frontend
 [ ] - New Pages
@@ -30,11 +16,10 @@
     [ ] Design Error page
 
 # Database
-[x] Change architecture to create db conn only once
-[x] getTableFieldsElements method in QueryHelper
 
 # Error handling
 [ ] Create class ErrorHandler
+[ ] Show error page on unexpected runtime errors
 
 # Logging
 [ ] Create class Logger
@@ -44,4 +29,5 @@
 
 # Open Questions
 [ ] Figure out how to acces the app with a specific path/without port number
-[ ] how to require nested destructured object
+[ ] How to require nested destructured object
+[ ] How to redirect user to error page

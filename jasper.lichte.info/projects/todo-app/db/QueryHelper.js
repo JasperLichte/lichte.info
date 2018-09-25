@@ -99,7 +99,7 @@ class QueryHelper {
    * @param {int} limit 
    * @returns {Promise}
    */
-  static getTableFields(connection, tableName, fields = [], condition = '', limit = null) {
+  static getTableFieldsElements(connection, tableName, fields = [], condition = '', limit = null) {
     return new Promise((resolve, reject) => {
       if (!connection || !tableName) {
         resolve({});
@@ -118,10 +118,44 @@ class QueryHelper {
       // Make request
       connection.query(query, (err, res) => {
         if (err || !res) {
-          resolve({});
+          resolve(err);
           return;
         }
         resolve(res);
+      });
+    });
+  }
+
+  /**
+   * Inserts a datset into db table
+   * @param {Connection} connection 
+   * @param {string} tableName 
+   * @param {object} fields 
+   * @returns {Promise}
+   */
+  static insertTableFields(connection, tableName, fields) {
+    return new Promise((resolve, reject) => {
+      if (!connection || !tableName || !fields) {
+        resolve(0);
+        return;
+      }
+      let columns = [];
+      let values = [];
+      for(let key in fields) {
+        columns.push(key);
+        values.push(QueryHelper.quotateString(connection, fields[key]));
+      }
+      columns = columns.join(', ');
+      values = values.join(', ');
+      columns = '(' + columns + ')';
+      values = 'VALUES (' + values + ')'
+      let query = `INSERT INTO ${tableName} ${columns} ${values};`;
+      connection.query(query, (err, res) => {
+        if (err || !res || !res.insertId) {
+          resolve(0);
+          return;
+        }
+        resolve(res.insertId);
       });
     });
   }

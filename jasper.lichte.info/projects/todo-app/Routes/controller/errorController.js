@@ -6,6 +6,13 @@ let activeLanguage = defaults.language;
 
 module.exports = {
     /**
+     * General error
+     */
+    getError: (req, res) => {
+        res.render('errors/error');
+    },
+
+    /**
      * Route not found
      */
     get404: (req, res) => {

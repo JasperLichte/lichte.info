@@ -1,6 +1,7 @@
 const { defaults } = require('./../../config/env');
 const { connection } = require('./../../app');
 const QueryHelper = require('./../../db/QueryHelper');
+const AppInformation = require('./../../inc/AppInformation');
 
 let activeLanguage = defaults.language;
 
@@ -16,7 +17,7 @@ module.exports = {
         }
 
         res.render('main', {
-            title: 'Start',
+            title: AppInformation.getViewTitle('Start'),
             lang: activeLanguage
         });
     },
@@ -33,7 +34,7 @@ module.exports = {
         QueryHelper.getStrings(connection, ['LOGIN', 'LOGIN_WITH', 'HELLO', 'YOU_CAN_LOGIN_WITH'], activeLanguage)
             .then(dbStrings => {
                 res.render('login', {
-                    title: dbStrings['LOGIN'],
+                    title: AppInformation.getViewTitle(dbStrings['LOGIN']),
                     lang: activeLanguage,
                     dbStrings: dbStrings
                 });

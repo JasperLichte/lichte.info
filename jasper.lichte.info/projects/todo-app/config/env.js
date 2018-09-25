@@ -8,7 +8,11 @@ module.exports = {
         DB: 'lichtein_app'
     },
     defaults: {
-        language: 'es',
+        language: 'en',
         supportedLanguages: ['en', 'de', 'es', 'fr']
+    },
+    app: {
+        name: 'todo-app',
+        title: 'todo-app'
     }
 }
