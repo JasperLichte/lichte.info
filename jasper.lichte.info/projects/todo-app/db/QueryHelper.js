@@ -145,10 +145,8 @@ class QueryHelper {
         columns.push(key);
         values.push(QueryHelper.quotateString(connection, fields[key]));
       }
-      columns = columns.join(', ');
-      values = values.join(', ');
-      columns = '(' + columns + ')';
-      values = 'VALUES (' + values + ')'
+      columns = '(' + columns.join(', ') + ')';
+      values = 'VALUES (' + values.join(', ') + ')'
       let query = `INSERT INTO ${tableName} ${columns} ${values};`;
       connection.query(query, (err, res) => {
         if (err || !res || !res.insertId) {
