@@ -9,7 +9,7 @@ class UserHandler {
      * @returns {void}
      */
     static createUser({platformId, userName, firstName, familyName, email}, platform) {
-        if (!platformId || !userName || !firstName || !familyName || !email || !platform) {
+        if (!(platformId && userName && firstName && familyName && email && platform)) {
             return;
         }
 
@@ -26,7 +26,7 @@ class UserHandler {
             let fields = {
                 user_ID: insertId
             };
-            fields[platform + '_ID'] = platformId;
+            fields[UserHandler.getPlatformKey(platform)] = platformId;
             QueryHelper.insertTableFields(connection, 'oauth', fields).then(insertId => {});
         });
     }
@@ -39,7 +39,7 @@ class UserHandler {
     static userExists(platformId, platform) {
         return new Promise((resolve, reject) => {
             if (!platformId || !platform) {
-                resolve(false);
+                resolve(null);
                 return;
             }
     
@@ -47,9 +47,39 @@ class UserHandler {
                 connection, 
                 'oauth', 
                 ['user_ID'],
-                `${UserHandler.getPlatformKey(platform)} = ${platformId}`
+                `${UserHandler.getPlatformKey(platform)} = ${platformId}`,
+                1
             ).then(res => {
-                resolve(!!res.length);
+                if (!res.length || !res[0] || !res[0].user_ID) {
+                    resolve(null);
+                    return;
+                }
+                resolve(res[0].user_ID);
+            });
+        });
+    }
+
+    /** 
+     * @param {int} user_ID 
+     */
+    static getUserById(user_ID) {
+        return new Promise((resolve, reject) => {
+            if (!user_ID) {
+                resolve({});
+                return;
+            }
+            QueryHelper.getTableFieldsElements(
+                connection,
+                'users',
+                ['user_ID', 'email', 'userName', 'firstName', 'familyName'],
+                `user_ID = ${parseInt(user_ID)}`,
+                1
+            ).then((res, err) => {
+                if (err || !res || !res[0]) {
+                    resolve({});
+                    return;
+                }
+                resolve(res[0]);
             });
         });
     }

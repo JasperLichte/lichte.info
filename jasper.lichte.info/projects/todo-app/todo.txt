@@ -4,18 +4,22 @@
     [ ] userExists():boolean
     [ ] storeUser:void
 
-# Routes
-
 # Auth
-[ ] - Facebook          
+[ ] - Google
+    [ ] If user already exists, get user from db
+    [ ] call 'done' with userdata   
+[ ] - Cookie-Session
+    [ ] setup
+    [ ] serialize user_ID
+    [ ] Check if user is logged-in
+[ ] - Redirecting
+    [ ] setup
 
 # Frontend
 [ ] - New Pages
     [ ] Design 404 page
     [ ] Design About page
     [ ] Design Error page
-
-# Database
 
 # Error handling
 [ ] Create class ErrorHandler
