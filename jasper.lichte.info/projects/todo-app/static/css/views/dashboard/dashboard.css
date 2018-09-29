@@ -17,23 +17,19 @@ main {
     -o-user-select: none;
     user-select: none;
 }
-
 #user #user-click-handler {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-
 #user #user-click-handler:hover #user-name {
     text-decoration: underline;
 }
-
 #user #user-click-handler > * {
     display: inline-block;
     cursor: pointer;
 }
-
 #user #user-img {
     width: 40px;
     height: 40px;
@@ -41,72 +37,87 @@ main {
     border-radius: 50%;
     margin-right: 0.75rem;
 }
-
 #user #user-dropdown {
     display: none;
     box-shadow: var(--box-shadow);
     background-color: #fff;
     padding: 0.5rem 0;
     list-style-type: none;
+    margin-top: 0.25rem;
 }
-
 #user #user-dropdown li a {
     display: block;
     padding: 0.5rem 0.5rem;
-    text-align: center;
 }
-
 #user #user-dropdown li:hover {
     background-color: var(--bg-clr);
 }
 
 .todo {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    width: 100%;
     max-width: 500px;
+    height: calc(100% - 3rem);
+}
+.todo .inputs {
+    margin-bottom: 0.25rem;
+}
+.todo .inputs button {
+    height: 30px;
+    width: 30px;
+    background-color: var(--accent-clr-2);
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.todo .inputs button#open-form-toogle {
+    background-image: url(./../../../assets/icons/plus-symbol.svg);
+    background-color: var(--accent-clr-3);
+}
+.todo .inputs button#reload-list {
+    background-image: url(./../../../assets/icons/reload.svg);
+    background-color: var(--accent-clr-4);
+}
+.todo .list {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
 }
-
 .todo .list .item {
     padding: 0.5rem;
-    box-shadow: var(--box-shadow);
     background: #fff;
     width: 100%;
     margin-bottom: 0.25rem;
 }
-
 .todo .list .item:last-of-type {
     margin-bottom: 0;
 }
-
 .todo .list .item .title {
-
+    font-size: 1.05rem;
 }
-
-.todo .list {
-    width: 100%;
+.todo .list .item .description {
+    margin: 0;
+    font-size: 0.9rem;
 }
-
 .todo form#addItem {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 1rem;
-    padding: 1rem;
-    box-shadow: var(--box-shadow);
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    box-shadow: var(--full-screen-box-shadow);
     background: #fff;
-    width: 100%;
+    width: calc(100% - 1.5rem);
+    max-width: 500px;
 }
-
 .todo form#addItem input[type=text] {
     font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    width: 100%;    
 }
 
 @media screen and (max-width: 720px) {

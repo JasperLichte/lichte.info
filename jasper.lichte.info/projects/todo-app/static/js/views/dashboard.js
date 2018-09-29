@@ -1,11 +1,27 @@
 addEventListener('load', function() {
 
-    this.setTimeout(function() {
-        $('.welcome-card').remove();
-    }, 4000);
+    var welcomeCard = $('.welcome-card');
+    var userClickHandler = $('#user #user-click-handler');
+    var userDropdown = $('#user #user-dropdown');
+    var todoList = $('.todo .list');
+    var addTodoItemForm = $('.todo form#addItem').hide();
+    var openAddTodoItemFormButton = $('.todo .inputs #open-form-toogle');
+    var reloadTodoListButton = $('.todo .inputs #reload-list');
 
-    $('#user #user-click-handler').click(function() {
-        $('#user #user-dropdown').toggle();
+    setTimeout(function() {
+        welcomeCard.fadeOut();
+        setTimeout(function() {
+            welcomeCard.remove();
+        }, 500);
+    }, 3000);
+
+    userClickHandler.click(function() {
+        userDropdown.fadeToggle();
+        $(document).mouseup(function (e) {
+            if (!userDropdown.is(e.target) && userDropdown.has(e.target).length === 0) {
+                userDropdown.fadeOut();
+            }
+        });
     });
 
 
@@ -19,14 +35,12 @@ addEventListener('load', function() {
                 }
             },
             success: function(data) {
-                var listNode = $('.todo .list');
-                listNode.html('');
+                todoList.html('');
                 data.forEach(function(set, i) {
-                    listNode
-                        .append(`  <div class="item">
+                    todoList.append(`<div class="item">
                                         <span class="title">${set.title ? set.title : ''}</span>
                                         <p class="description">${set.description ? set.description : ''}</span>
-                                    </div>`)
+                                    </div>`);
                 });
             }
         });
@@ -34,16 +48,15 @@ addEventListener('load', function() {
     getTodoItems();
 
     // Post new Todo Entry
-    $('.todo form#addItem').submit(function(e) {
-
-        var titleNode = $(this).find('input[name=title]');
-        var descriptionNode = $(this).find('input[name=description]');
+    addTodoItemForm.submit(function(e) {
+        var titleInput = $(this).find('input[name=title]');
+        var descriptionInput = $(this).find('input[name=description]');
 
         e.preventDefault();
 
         var data = {
-            title: titleNode.val(),
-            description: descriptionNode.val(),
+            title: titleInput.val(),
+            description: descriptionInput.val(),
         };
 
         $.ajax('/api/todo', {
@@ -55,13 +68,31 @@ addEventListener('load', function() {
                 }
             },
             success: function() {
-                console.log('success');
-                titleNode.val('');
-                descriptionNode.val('');
                 getTodoItems();
+                titleInput.val('');
+                descriptionInput.val('');
+                addTodoItemForm.fadeOut();
             }
         });
+    });
 
+    // Form toggle
+    openAddTodoItemFormButton.on('click', function() {
+        addTodoItemForm.fadeIn();
+        $(document).mouseup(function (e) {
+            if (!addTodoItemForm.is(e.target) && addTodoItemForm.has(e.target).length === 0) {
+                addTodoItemForm.fadeOut();
+            }
+        });
+    });
+
+    // Reload-button
+    reloadTodoListButton.click(function() {
+        console.log(1);
+        todoList.animate({
+            scrollTop: 0
+        }, 500);
+        getTodoItems();
     });
 
 });

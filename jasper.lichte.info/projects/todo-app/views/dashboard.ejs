@@ -12,7 +12,6 @@
         <!-- User -->
         <div id="user">
             <div id="user-click-handler">
-                    <div id="user-img"></div>
                     <span id="user-name"><%= user.userName %></span>
             </div>
             <ul id="user-dropdown">
@@ -22,9 +21,11 @@
         </div>
         <!-- ToDo -->
         <section class="todo">
-            <div class="list">
-                
+            <div class="inputs">
+                <button id="open-form-toogle"></button>
+                <button id="reload-list"></button>
             </div>
+            <div class="list"><!-- Todo-list entries will go here --></div>
             <form action="/api/todo" id="addItem" method="POST">
                 <input type="text" name="title" placeholder=<%= dbStrings['TITLE'] %> />
                 <input type="text" name="description" placeholder=<%= dbStrings['DESCRIPTION'] %> />

@@ -27,9 +27,9 @@ input[type=text], button, input[type=submit] {
 
 input[type=submit] {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-color: var(--accent-clr-2);
+    height: 35px;
+    width: 35px;
+    background-color: var(--accent-clr-1);
     background-image: url(./../../../assets/icons/enter-arrow.svg);
     background-size: 75%;
     background-position: center center;
@@ -38,7 +38,7 @@ input[type=submit] {
 
 input[type=text] {
     background-color: transparent;
-    border-bottom: 1px solid var(--accent-clr-2);
+    border-bottom: 1px solid var(--font-clr);
     padding: 0.25rem 1rem 0.125rem 0;
     color: var(--font-clr);
 }
