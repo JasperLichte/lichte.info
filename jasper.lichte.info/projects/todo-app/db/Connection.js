@@ -1,6 +1,6 @@
-const mysql = require("mysql");
-const { db } = require('./../config/env');
-const credentials = require('./../config/credentials');
+const mysql           = require("mysql");
+const { db }          = require('./../config/env');
+const credentials     = require('./../config/credentials');
 
 class Connection {
   constructor() {

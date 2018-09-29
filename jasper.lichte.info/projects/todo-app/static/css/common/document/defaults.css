@@ -8,10 +8,37 @@ a, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+a:hover, button:hover, input[type=submit]:hover {
+    cursor: pointer;
+}
+
 a:hover {
     text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
+}
+
+
+input[type=text], button, input[type=submit] {
+    border: none;
+}
+
+input[type=submit] {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: var(--accent-clr-2);
+    background-image: url(./../../../assets/icons/enter-arrow.svg);
+    background-size: 75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+input[type=text] {
+    background-color: transparent;
+    border-bottom: 1px solid var(--accent-clr-2);
+    padding: 0.25rem 1rem 0.125rem 0;
+    color: var(--font-clr);
 }

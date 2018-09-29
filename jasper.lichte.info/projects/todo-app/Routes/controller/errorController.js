@@ -1,6 +1,6 @@
-const { defaults } = require('./../../config/env');
-const QueryHelper = require('./../../db/QueryHelper');
-const { connection } = require('./../../app');
+const { defaults }          = require('./../../config/env');
+const QueryHelper           = require('./../../db/QueryHelper');
+const { connection }        = require('./../../app');
 
 let activeLanguage = defaults.language;
 

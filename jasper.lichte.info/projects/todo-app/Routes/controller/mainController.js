@@ -1,7 +1,7 @@
-const { defaults } = require('./../../config/env');
-const { connection } = require('./../../app');
-const QueryHelper = require('./../../db/QueryHelper');
-const AppInformation = require('./../../inc/AppInformation');
+const { defaults }          = require('./../../config/env');
+const { connection }        = require('./../../app');
+const QueryHelper           = require('./../../db/QueryHelper');
+const AppInformation        = require('./../../inc/AppInformation');
 
 let activeLanguage = defaults.language;
 
@@ -26,6 +26,11 @@ module.exports = {
      * /login
      */
     getLogin: (req, res) => {
+        if (req.user) {
+            res.redirect('/dashboard');
+            return;
+        }
+
         const clientLanguage = req.acceptsLanguages(defaults.supportedLanguages);
         if (clientLanguage) {
             activeLanguage = clientLanguage;
@@ -40,6 +45,16 @@ module.exports = {
                 });
     
             });
+    },
+
+    /**
+     * /logout
+     */
+    getLogout: (req, res) => {
+        if (req.user) {
+            req.logout();
+        }
+        res.redirect('/login');
     },
 
     /**

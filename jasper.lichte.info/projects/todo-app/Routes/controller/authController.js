@@ -14,7 +14,11 @@ module.exports = {
     }),
 
     getGoogleRedirect: (req, res) => {
-        res.send('')
+        if (req.user) {
+            res.redirect('/dashboard');
+            return;
+        }
+        res.redirect('login');
     },
 
     /**

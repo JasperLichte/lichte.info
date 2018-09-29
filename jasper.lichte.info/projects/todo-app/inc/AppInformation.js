@@ -8,7 +8,7 @@ class AppInformation {
      */
     static getViewTitle(viewName = '') {
         if (!viewName) {
-            return appDefaults.name;
+            return appDefaults.title;
         }
 
         return appDefaults.title + ' | ' + viewName;

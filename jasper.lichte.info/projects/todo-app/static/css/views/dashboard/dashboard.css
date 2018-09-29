@@ -1,0 +1,116 @@
+main {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: var(--bg-clr);
+    padding: 1rem;
+    padding-top: 3em;
+}
+
+#user {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem 2rem 0 0;-webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#user #user-click-handler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#user #user-click-handler:hover #user-name {
+    text-decoration: underline;
+}
+
+#user #user-click-handler > * {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#user #user-img {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-clr-1);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+#user #user-dropdown {
+    display: none;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    padding: 0.5rem 0;
+    list-style-type: none;
+}
+
+#user #user-dropdown li a {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+}
+
+#user #user-dropdown li:hover {
+    background-color: var(--bg-clr);
+}
+
+.todo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.todo .list .item {
+    padding: 0.5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.todo .list .item:last-of-type {
+    margin-bottom: 0;
+}
+
+.todo .list .item .title {
+
+}
+
+.todo .list {
+    width: 100%;
+}
+
+.todo form#addItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    width: 100%;
+}
+
+.todo form#addItem input[type=text] {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+    #user {
+        padding: 0.5rem 0.5rem 0 0;
+    }
+}

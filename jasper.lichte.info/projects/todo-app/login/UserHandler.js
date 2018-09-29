@@ -1,5 +1,5 @@
-const { connection } = require('./../app');
-const QueryHelper = require('./../db/QueryHelper');
+const { connection }        = require('./../app');
+const QueryHelper           = require('./../db/QueryHelper');
 
 class UserHandler {
 
@@ -9,25 +9,31 @@ class UserHandler {
      * @returns {void}
      */
     static createUser({platformId, userName, firstName, familyName, email}, platform) {
-        if (!(platformId && userName && firstName && familyName && email && platform)) {
-            return;
-        }
-
-        QueryHelper.insertTableFields(connection, 'users', {
-            email: email,
-            familyName: familyName,
-            firstName: firstName,
-            userName: userName
-        }).then(insertId => {
-            if (!insertId) {
+        return new Promise((resolve, reject) => {
+            if (!(platformId && userName && firstName && familyName && email && platform)) {
+                resolve(0);
                 return;
             }
-
-            let fields = {
-                user_ID: insertId
-            };
-            fields[UserHandler.getPlatformKey(platform)] = platformId;
-            QueryHelper.insertTableFields(connection, 'oauth', fields).then(insertId => {});
+    
+            QueryHelper.insertTableFields(connection, 'users', {
+                email: email,
+                familyName: familyName,
+                firstName: firstName,
+                userName: userName,
+                registered: (new Date())
+            }).then(insertId => {
+                if (!insertId) {
+                    resolve(0);
+                    return;
+                }
+    
+                let fields = {
+                    user_ID: insertId
+                };
+                fields[UserHandler.getPlatformKey(platform)] = platformId;
+                QueryHelper.insertTableFields(connection, 'oauth', fields).then(insertId => {});
+                resolve(insertId);
+            });
         });
     }
 
@@ -39,7 +45,7 @@ class UserHandler {
     static userExists(platformId, platform) {
         return new Promise((resolve, reject) => {
             if (!platformId || !platform) {
-                resolve(null);
+                resolve(0);
                 return;
             }
     
@@ -51,7 +57,7 @@ class UserHandler {
                 1
             ).then(res => {
                 if (!res.length || !res[0] || !res[0].user_ID) {
-                    resolve(null);
+                    resolve(0);
                     return;
                 }
                 resolve(res[0].user_ID);
@@ -60,7 +66,8 @@ class UserHandler {
     }
 
     /** 
-     * @param {int} user_ID 
+     * @param {int} user_ID
+     * @returns {Promise} 
      */
     static getUserById(user_ID) {
         return new Promise((resolve, reject) => {

@@ -51,7 +51,7 @@ class QueryHelper {
          AND language = '${language}'
         `, (err, res) => {
           if (err || !res || !res.length) {
-            reject();
+            resolve({});
           }
           res.forEach(set => {
             strings[set.string_ID] = set.string;
@@ -97,28 +97,31 @@ class QueryHelper {
    * @param {array} fields 
    * @param {string} condition 
    * @param {int} limit 
+   * @param {string} order
    * @returns {Promise}
    */
-  static getTableFieldsElements(connection, tableName, fields = [], condition = '', limit = null) {
+  static getTableFieldsElements(connection, tableName, fields = [], condition = '', limit = null, order = '') {
     return new Promise((resolve, reject) => {
       if (!connection || !tableName) {
-        resolve({});
+        reject();
         return;
       }
       let query = 'SELECT ';
       // Fields
       query += (Array.isArray(fields) && fields.length ? fields.join(', ') : '*');
       // Table
-      query += ' FROM ' + tableName + ' ';
+      query += ' FROM `' + tableName + '` ';
       // Condition
       query += (condition ? 'WHERE ' + condition : '');
+      // Sort
+      query += (order ? ' ORDER BY ' + order : '');
       // Limit
-      query += (limit ? 'LIMIT ' + limit : '');
+      query += (limit ? ' LIMIT ' + limit : '');
 
       // Make request
       connection.query(query, (err, res) => {
         if (err || !res) {
-          resolve(err);
+          reject(err);
           return;
         }
         resolve(res);
@@ -136,7 +139,7 @@ class QueryHelper {
   static insertTableFields(connection, tableName, fields) {
     return new Promise((resolve, reject) => {
       if (!connection || !tableName || !fields) {
-        resolve(0);
+        reject();
         return;
       }
       let columns = [];
@@ -147,10 +150,10 @@ class QueryHelper {
       }
       columns = '(' + columns.join(', ') + ')';
       values = 'VALUES (' + values.join(', ') + ')'
-      let query = `INSERT INTO ${tableName} ${columns} ${values};`;
+      let query = 'INSERT INTO `' + tableName + '` ' + columns + ' ' + values + ';';
       connection.query(query, (err, res) => {
-        if (err || !res || !res.insertId) {
-          resolve(0);
+        if (err || !res) {
+          reject();
           return;
         }
         resolve(res.insertId);

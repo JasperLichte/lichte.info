@@ -1,6 +1,10 @@
 html {
     --font-clr: #222;
     --bg-clr: #eee;
+
+    --accent-clr-1: #DAA520;
+    --accent-clr-2: #5F9EA0;
+
     --quarter-transparent-font-clr: rgba(34, 34, 34, 0.75);
 
     --box-shadow-clr: rgba(0, 0, 0, 0.4);

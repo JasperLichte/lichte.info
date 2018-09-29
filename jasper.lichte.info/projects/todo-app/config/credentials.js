@@ -10,5 +10,8 @@ module.exports = {
         clientSecret: 'EZkyHgpAsEsK2oP8O9R9bwuF'
       }
     }
+  },
+  cookieSession: {
+    keys: ['jAspErIsAw3S0me']
   }
 };

@@ -12,7 +12,7 @@ module.exports = {
         supportedLanguages: ['en', 'de', 'es', 'fr']
     },
     app: {
-        name: 'todo-app',
-        title: 'todo-app'
+        name: 'SortMeOut',
+        title: 'SortMeOut Ⓒ'
     }
 }

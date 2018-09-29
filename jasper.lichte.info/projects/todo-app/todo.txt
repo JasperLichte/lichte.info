@@ -1,19 +1,5 @@
 # Architecture
 [ ] Add WEB_PATH constant
-[ ] - Create class User
-    [ ] userExists():boolean
-    [ ] storeUser:void
-
-# Auth
-[ ] - Google
-    [ ] If user already exists, get user from db
-    [ ] call 'done' with userdata   
-[ ] - Cookie-Session
-    [ ] setup
-    [ ] serialize user_ID
-    [ ] Check if user is logged-in
-[ ] - Redirecting
-    [ ] setup
 
 # Frontend
 [ ] - New Pages
@@ -24,14 +10,11 @@
 # Error handling
 [ ] Create class ErrorHandler
 [ ] Show error page on unexpected runtime errors
+[ ] Use reject in Promises
 
 # Logging
 [ ] Create class Logger
 
-# Hosting
-[ ] Get forever.js installed
-
 # Open Questions
 [ ] Figure out how to acces the app with a specific path/without port number
 [ ] How to require nested destructured object
-[ ] How to redirect user to error page
