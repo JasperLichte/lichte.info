@@ -22,25 +22,28 @@ function scrollAnimations() {
   }
 
   function animateGraph() {
+    if (!graphNode) {
+      return;
+    }
     const dataNodes = graphNode.childNodes;
     dataNodes.forEach((el, i) => {
       if (el.id) {
         let val;
         switch (el.id) {
-          case "html5":
-            val = 80;
-            break;
-          case "css3":
+          case "react":
             val = 75;
             break;
-          case "es6":
-            val = 72;
+          case "ts":
+            val = 67;
             break;
           case "php":
-            val = 55;
+            val = 85;
             break;
           case "node":
-            val = 65;
+            val = 70;
+            break;
+          case "rust":
+            val = 25;
             break;
           default:
             val = 50;
@@ -52,9 +55,12 @@ function scrollAnimations() {
   }
 
   function animateContactMe() {
+    if (!contactNode) {
+      return;
+    }
     const nodes = contactNode.querySelectorAll('input, textarea');
     nodes.forEach(item => {
-      if (window.scrollY >= getPosition(item).y - window.innerHeight + item.clientHeight) {
+      if (window.scrollY >= getPosition(item).y - window.innerHeight + item.clientHeight * 1) {
         item.style.width = '100%';
       }
     });

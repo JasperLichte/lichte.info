@@ -10,6 +10,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-weight: 100;
 }
 
 body {
@@ -21,4 +22,13 @@ body {
   margin: 0 auto;
   background: var(--main-color);
   transition: background-color 1s ease-out;
+}
+
+a, a:visited, a:hover, a:link, a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

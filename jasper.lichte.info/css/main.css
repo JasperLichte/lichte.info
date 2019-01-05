@@ -1,11 +1,11 @@
 main {
   background: rgba(200, 200, 200, 0.35);
   padding: 3rem 5rem;
-  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
 }
 
 main section {
-  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
   transition: all 1s ease-out;
   background: var(--secondary-color);
   color: #fff;
@@ -43,7 +43,7 @@ main .section1 .content h2 {
 main .section1 .img {
   flex: 1;
   max-width: 300px;
-  background-image: url(./../Assets/JasperLichte.jpg);
+  background-image: url(https://media.lichte.info/pics/JasperLichte.jpg);
   background-size: 107%;
   background-position: 50% 20%;
   transition: all 0.3s ease-out;
@@ -239,4 +239,8 @@ main .section5 .education div p {
 main .section5 .education div h4 {
   font-weight: 100;
   font-size: 1.2rem;
+}
+
+main .projects {
+  padding: 2rem;
 }
