@@ -1,12 +1,12 @@
-addEventListener("load", () => {
+addEventListener('load', _ => {
   let themes = [];
 
   let default_theme = document.querySelector(
-    ".themeOptions > div:first-of-type"
+    '.themeOptions > div:first-of-type'
   ).dataset.color;
   themeChange(default_theme);
 
-  for (let item of document.querySelectorAll(".themeOptions > *")) {
+  for (let item of document.querySelectorAll('.themeOptions > *')) {
     item.style.background = item.dataset.color;
     item.onclick = e => {
       themeChange(e.target.dataset.color);
@@ -21,45 +21,42 @@ function themeChange(theme) {
   let secondaryTheme;
 
   switch (theme) {
-    case "seagreen":
-      secondaryTheme = "lightcoral";
+    case 'seagreen':
+      secondaryTheme = 'lightcoral';
       break;
-    case "darkorange":
-      secondaryTheme = "rgb(63, 63, 63)";
+    case 'darkorange':
+      secondaryTheme = 'rgb(63, 63, 63)';
       break;
-    case "#de3c4b":
-      secondaryTheme = "#17bebb";
+    case '#de3c4b':
+      secondaryTheme = '#17bebb';
       break;
-    case "tomato":
-      secondaryTheme = "DarkCyan";
+    case 'tomato':
+      secondaryTheme = 'DarkCyan';
       break;
-    case "rgb(63, 63, 63)":
-      secondaryTheme = "goldenrod";
+    case 'rgb(63, 63, 63)':
+      secondaryTheme = 'goldenrod';
       break;
-    case "#936a3f":
-      secondaryTheme = "#68a631";
+    case '#936a3f':
+      secondaryTheme = '#68a631';
       break;
     default:
-      secondaryTheme = "goldenrod";
+      secondaryTheme = 'goldenrod';
       break;
   }
 
-  document.body.style.setProperty("--main-color", theme);
-  document.body.style.setProperty("--secondary-color", secondaryTheme);
+  document.body.style.setProperty('--main-color', theme);
+  document.body.style.setProperty('--secondary-color', secondaryTheme);
 }
 
 function changeThemeAutomatically(arr) {
   let ind = 1;
-  let interval = setInterval(() => {
-    for (let item of document.querySelectorAll(".themeOptions > *")) {
-      item.style.border = "none";
+  setInterval(_ => {
+    for (let item of document.querySelectorAll('.themeOptions > *')) {
+      item.style.border = 'none';
     }
     let triggeredTheme = arr[ind].toLowerCase();
 
     themeChange(triggeredTheme);
-    ind++;
-    if (ind >= arr.length) {
-      ind = 0;
-    }
-  }, 20000);
+    ind = (++ind % arr.length);
+  }, 17500);
 }

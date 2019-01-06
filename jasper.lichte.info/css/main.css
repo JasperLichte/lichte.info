@@ -79,6 +79,7 @@ main .section2 .graphic .labels span {
   text-align: center;
   padding-top: 0.25rem;
   font-size: 1.2em;
+  overflow: hidden;
 }
 
 main .section2 .graphic .data {
@@ -101,7 +102,7 @@ main .section2 .graphic .data > * {
 }
 
 main .section2 .graphic .data > *::after {
-  content: "";
+  content: '';
   height: 100%;
   width: 10%;
   min-width: 5px;
@@ -119,7 +120,7 @@ main .section3 {
   padding: 2rem;
 }
 
-main .section3 .inputs input[type="text"], main .section3 .inputs input[type="email"], main .section3 .inputs textarea {
+main .section3 .inputs input[type='text'], main .section3 .inputs input[type='email'], main .section3 .inputs textarea {
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--main-color);
@@ -131,11 +132,11 @@ main .section3 .inputs input[type="text"], main .section3 .inputs input[type="em
   transition: border 0.75s ease-out, width 1s ease-in-out;
 }
 
-main .section3 .inputs input[type="text"]:focus,  main .section3 .inputs input[type="email"]:focus, textarea:focus {
+main .section3 .inputs input[type='text']:focus,  main .section3 .inputs input[type='email']:focus, textarea:focus {
   border-bottom: 2px solid #ccc;
 }
 
-main .section3 .inputs textarea[id="message"] {
+main .section3 .inputs textarea[id='message'] {
   padding-right: 0;
   resize: none;
   max-height: 200px;
@@ -147,7 +148,7 @@ main .section3 .inputs p {
   margin-top: 1.5rem;
 }
 
-main .section3 .inputs button[id="send"] {
+main .section3 .inputs button[id='send'] {
   background: var(--main-color);
   color: #ccc;
   border: 1px solid var(--secondary-color);
@@ -184,9 +185,6 @@ main .section4 .technologies > * {
   display: flex;
   text-align: left;
   flex-direction: column;
-}
-
-main .section4 .technologies > div {
 }
 
 main .section4 .technologies > h3 {

@@ -1,10 +1,10 @@
 scrollAnimations();
-window.addEventListener("scroll", scrollAnimations);
+window.addEventListener('scroll', scrollAnimations);
 
 function scrollAnimations() {
-  const headerNode = document.querySelector("header h1");
-  const graphNode = document.querySelector("main .section2 .graphic > .data");
-  const contactNode = document.querySelector("main .section3 .inputs");
+  const headerNode = document.querySelector('header h1');
+  const graphNode = document.querySelector('main .section2 .graphic > .data');
+  const contactNode = document.querySelector('main .section3 .inputs');
 
   animateHeader();
   animateContactMe();
@@ -30,26 +30,26 @@ function scrollAnimations() {
       if (el.id) {
         let val;
         switch (el.id) {
-          case "react":
+          case 'react':
             val = 75;
             break;
-          case "ts":
+          case 'ts':
             val = 67;
             break;
-          case "php":
+          case 'php':
             val = 85;
             break;
-          case "node":
+          case 'node':
             val = 70;
             break;
-          case "rust":
+          case 'rust':
             val = 25;
             break;
           default:
             val = 50;
             break;
         }
-        el.style.height = val + "%";
+        el.style.height = val + '%';
       }
     });
   }
