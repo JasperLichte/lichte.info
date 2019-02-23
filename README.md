@@ -1,2 +1,2 @@
 # lichte.info
-> Personal website
+> Personal website. Old version
